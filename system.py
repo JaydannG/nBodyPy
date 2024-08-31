@@ -16,11 +16,13 @@ class system:
         return accs
 
     def integrate(self, n, dt):
+        saved_pos = []
         for s in range(n):
             # use verlet integration/scheme to update the positions and velocities
             accs = self.findAccelerations()
             for i, body in enumerate(self.bodies):
                 body.pos += body.vel * dt + accs[i] * dt**2 * 0.5
+                saved_pos.append(body.pos)
 
             nextAccs = self.findAccelerations()
 
