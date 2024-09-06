@@ -33,12 +33,6 @@ class body:
             if body != self:
                 # find the distance between the bodies and use it to calculate the force between them 
                 r = self.pos - body.pos
-
-                # distance = np.linalg.norm(r)
-                # acceleration += G * body.mass * r / np.maximum(distance**3, softening**3)
-                # acceleration[1] = -acceleration[1]
-                # return acceleration
-
                 F = (G * self.mass * body.mass) / np.linalg.norm(r)**2
 
                 # calculate the angle of the force and use it to determine the components of the force
@@ -52,6 +46,6 @@ class body:
 
                 # calculate the acceleration based on the forces
                 acc[0] = Fx / self.mass
-                acc[1] = (Fy / self.mass)
+                acc[1] = Fy / self.mass
 
         return acc

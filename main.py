@@ -10,19 +10,17 @@ pg.display.set_caption("n Body Simulation")
 # create the planets
 bodies = []
 
-# y dir test
-pluto = body(pos=(250.0, 250.0), mass=1.0, vel=(.1, -.1))
+pluto = body(pos=(250.0, 200.0), mass=1.0, vel=(-.1, 0.0))
 bodies.append(pluto)
 
-star = body(pos=(100.0, 300.0), mass=1.0, vel=(-.1, .1))
+star = body(pos=(250.0, 250.0), mass=1.0, vel=(0.0, 0.0))
 bodies.append(star)
 
-# x dir test
 jupiter = body(pos=(300.0, 200.0), mass=1.0, vel=(-.1, -.1))
 bodies.append(jupiter)
 
-neptune = body(pos=(400.0, 350.0), mass=1.0, vel=(.1, .1))
-bodies.append(neptune)
+# neptune = body(pos=(400.0, 350.0), mass=1.0, vel=(.1, .1))
+# bodies.append(neptune)
 
 sys = system(bodies)
 
